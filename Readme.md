@@ -10,4 +10,9 @@ Now we're going to create awersome latex courese for MIPT.
 - [ ] To create a task description.
 - [ ] To write a lesson scenario.
 - [ ] To try to make a video lesson.
-- [ ] To present tesk course version to Vlad. 
+- [ ] To present task course version to Vlad.
+___
+- [X] 2 картинки рядом
+- [ ] центрирование подписи к картинке
+___
+- [ ] to look up the information from [This web site](https://lisakov.com/blog/latex-knows-better/)
