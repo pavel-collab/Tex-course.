@@ -16,3 +16,32 @@ ___
 - [ ] центрирование подписи к картинке
 ___
 - [ ] to look up the information from [This web site](https://lisakov.com/blog/latex-knows-better/)
+
+### Basic structure of cource:
+
+* Introduction: a couple of words about Latex and its' advantures
+* The workspace:
+    - TexStudio (Need to think, will we do an installing instruction. We may make, for example, only a text instruction)
+    - TexMaker
+    - __OverLeaf__ (our choice)
+* OverLeaf
+    - website -- sign in
+    - workspace
+        - how to create project
+        - how to manage your projects
+        - how to compile the file
+* Start of working
+    - preambule (\input{}, packages)
+    - title -- ???
+    - plain text (spaces, indentation, textstyles)
+    - math
+        - equations
+        - operators (fraction, multiply, brackets)
+        - formules in the text
+    - figures
+        - pictures
+        - minipage
+    - references
+        - ref to figure
+        - ref to equation
+        - content page
