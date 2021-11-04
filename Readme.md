@@ -41,6 +41,7 @@ ___
     - figures
         - pictures
         - minipage
+        - tables
     - references
         - ref to figure
         - ref to equation
