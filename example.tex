@@ -14,7 +14,7 @@
 \usepackage{hyperref}                 % ссылки на странцы
 
 \usepackage{caption}
-\captionsetup{justification=centering}
+\captionsetup{justification=centering}% центрирование описания картинки
 
 % вид страницы
 \usepackage{geometry} % Простой способ задавать поля
@@ -75,8 +75,8 @@
     Основным элементом оптической схемы Фурье-спектрометра является двухлучевой интерферометр Майкельсона, 
     состоящий из полупрозрачного светоделителя и двух плоских зеркал. 
     Фурье-спектрометр позволяет получать информацию о спектральном составе ИК излучения и, следовательно, 
-    об электромагнитных свойствах исследуемых объектов в окрестности длин волн 1 -- 10 мкм. 
-    Схема устройства Фурье-интерферометра представлена на рисунке \hyperref[picture_1]{1}.
+    об электромагнитных свойствах исследуемых объектов в окрестности длин волн 1 -- 10 мкм. 
+    Схема устройства Фурье-интерферометра представлена на рисунке \hyperref[picture_1]{1}.
 
     \begin{figure}[h!]
         \centering
@@ -108,14 +108,14 @@
 
     \begin{figure}[h!]
         \begin{center}
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{2.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{2.png}
                 \caption{Экспериментально полученная интерферограмма для пустого канала}
                 \label{picture_2}
             \end{minipage}
             \hfill
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{3.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{3.png}
                 \caption{Экспериментально полученная интерферограмма для стекла}
                 \label{picture_3}
             \end{minipage}
@@ -155,31 +155,31 @@
     \section{Расчеты в MATLAB}
 
     Над полученными интерферограммами в среде MATLAB было произведено дискретное преобразование Фурье. 
-    Соответствующие коэффициенты разложения по волновым числам представлены на рисунках 
+    Соответствующие коэффициенты разложения по волновым числам представлены на рисунках 
     \hyperref[picture_5]{5}, \hyperref[picture_6]{6}, \hyperref[picture_7]{7}, \hyperref[picture_8]{8}.
 
     \begin{figure}[h!]
         \begin{center}
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{5.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{5.png}
                 \caption{ПФ интерферограммы для пустого канала}
                 \label{picture_5}
             \end{minipage}
             \hfill
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{6.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{6.png}
                 \caption{ПФ интерферограммы для стекла}
                 \label{picture_6}
             \end{minipage}
             \hfill
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{7.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{7.png}
                 \caption{ПФ интерферограммы для стекла с напылением CuO}
                 \label{picture_7}
             \end{minipage}
             \hfill
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{8.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{8.png}
                 \caption{Сводный график}
                 \label{picture_8}
             \end{minipage}
@@ -187,21 +187,21 @@
     \end{figure}
 
     Для получения спектра пропускания материалов было найдено отношение спектральной плотности прошедшего через образец сигнала 
-    к спектральной плотности сигнала, прошедшего через пустой канал. Графики отношений представлены на рисунках 
-    \hyperref[picture_9]{9}, \hyperref[picture_10]{10}.
+    к спектральной плотности сигнала, прошедшего через пустой канал. Графики отношений представлены на рисунках 
+    \hyperref[picture_9]{9}, \hyperref[picture_10]{10}.
 
     \newpage
 
     \begin{figure}[h!]
         \begin{center}
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{9.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{9.png}
                 \caption{Коэффициент пропускания стекла}
                 \label{picture_9}
             \end{minipage}
             \hfill
-            \begin{minipage}[h!]{0.4\linewidth}
-                \includegraphics[width=1.2\linewidth]{10.png}
+            \begin{minipage}[h!]{0.48\linewidth}
+                \includegraphics[width=1\linewidth]{10.png}
                 \caption{Коэффициент пропускания стекла с напылением CuO}
                 \label{picture_10}
             \end{minipage}
