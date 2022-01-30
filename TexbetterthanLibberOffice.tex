@@ -47,7 +47,7 @@
 
     \subsection{Как оно работает???}
 
-    В некотором смысле работа \LaTeX похожа на известные вам языки программирования. На вход подается исходный код, затем происходит компиляция и на выходе мы получаем тепленький красивый pdf-документ.
+    В некотором смысле работа LaTeX похож на известные вам языки программирования. На вход подается исходный код, затем происходит компиляция и на выходе мы получаем тепленький красивый pdf-документ.
 
     %% картинки исходного кода и готового документа
 
@@ -91,8 +91,9 @@
     \subsection{Регистрация}
 
     Давайте же познакомимся с нашим текстовым редактором. Для этого перейдем на сайт 
-    %%\href{https://www.overleaf.com/login}{https://www.overleaf.com/login} 
-    https://www.overleaf.com/login и сразу попадем на страницу регистрации. 
+    \href{https://www.overleaf.com/login}{https://www.overleaf.com/login} 
+    % https://www.overleaf.com/login 
+    и сразу попадем на страницу регистрации. 
 
     %% input a beautiful instruction pictures
     
@@ -192,10 +193,176 @@
 
     %Добавить раздел работа с текстом, в нем описать нужные термины
 
+    \section{Работа с текстом}
+
+    Наш основной код начинается с окружения
+    
+    \begin{verbatim}
+        \begin{document} % начало документа
+        \end{document} % конец документа
+    \end{verbatim}
+
+    эти строчки обозначают соответственно начало и конец нашего основного документа, именно внутри этого окружения мы будем писать наш основной контент.
+
+    Теперь займемся смысловым наполнением нашего документа. Межу 
+    командами begin и end напишем нашу первую строчку:
+
+    \begin{verbatim}
+        \begin{document} % начало документа
+        Наша первая строчка.
+        \end{document} % конец документа
+    \end{verbatim}
+    Для того, чтобы скомпилировать полученный код, нажмем сочетание
+    клавиш \textbf{Ctrl + S}, или зеленую кнопочку \textbf{Recompile} на страничке редактора Overleaf.
+
+    В области визуализации pdf-документа можем убедиться, что написанная нами строчка появилась в нашем будущем документе.
+
+    Попробуем написать вторую строчку под первой, а затем, заново
+    скомпилировать документ. Здесь мы сталкиваемся с первой проблемой:
+    вопреки нашему желанию вторая строчка напечаталась рядом с первой, а не под ней, 
+    так, как это было в исходнике.\\[1 cm] 
+
+    \begin{minipage}[h!]{0.5\linewidth}
+    \begin{verbatim}
+    \begin{document}
+    Наша первая строчка.
+    Вторая строчка.
+    \end{document}
+    \end{verbatim}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h!]{0.5\linewidth}
+    Наша первая строчка.
+    Вторая строчка
+    \end{minipage}
+
+    Для того, чтобы перейти на новую строку в \LaTeX есть несколько способов
+
+    \begin{enumerate}
+        \item Если вы хотите начать новый абзац, то нужно оставить одну пустую строку.
+
+    \begin{minipage}[h!]{0.5\linewidth}
+    \begin{verbatim}
+    \begin{document}
+    Наша первая строчка.
+
+    Вторая строчка.
+    \end{document}
+    \end{verbatim}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h!]{0.5\linewidth}
+    Наша первая строчка.
+
+    Вторая строчка
+    \end{minipage}
+
+    \item Если вы хотите просто перенести текст на следующую строчку, не начиная при этом новый абзац, То
+    в конце строки необходимо поставить $\backslash \backslash$.
+
+    \begin{minipage}[h!]{0.5\linewidth}
+    \begin{verbatim}
+    \begin{document}
+    Наша первая строчка.\\
+    Вторая строчка.
+    \end{document}
+    \end{verbatim}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[h!]{0.5\linewidth}
+    Наша первая строчка.\\
+    Вторая строчка
+    \end{minipage}
+
+    \item Если вы ходите получить вертикальный отступ, какого-то фиксированного размера,
+    вы можете указать этот размер в квадратных скобках, после $\backslash \backslash$.
+
+\begin{minipage}[h!]{0.5\linewidth}
+\begin{verbatim}
+\begin{document}
+Наша первая строчка.\\[1 cm]
+Вторая строчка.
+\end{document}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[h!]{0.5\linewidth}
+Наша первая строчка.\\[1 cm]
+Вторая строчка
+\end{minipage}
+
+    \end{enumerate}
+
+    Похожая ситуация в \LaTeX и с горизонтальными пробелами.
+    Если между двумя словами, вы поставите 5 пробелов, в конечном
+    документе, между этими словами все равно будет один пробел.\\[0.5 cm]
+    
+\begin{minipage}[h!]{0.5\linewidth}
+\begin{verbatim}
+\begin{document}
+The first     the second.
+\end{document}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[h!]{0.5\linewidth}
+    The first     the second.
+\end{minipage} \\[0.5 cm]
+
+    Для того, чтобы сделать горизонтальный отступ заданного размера,
+    применим команду $\backslash hspace\{\}$ \\[5 mm]
+
+\begin{minipage}[h!]{0.5\linewidth}
+\begin{verbatim}
+\begin{document}
+The first \hspace{5 mm} 
+the second.
+\end{document}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[h!]{0.5\linewidth}
+The first \hspace{5 mm} the second.
+\end{minipage} \\[5 mm]
+
+    Приведем в табличке некоторые команды офорлмения текста, поэксперементировать с ними вы можете самомтоятельно.
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Стиль оформления & команда & результат\\
+            \hline
+            \hline
+            Выделить жирным & $\backslash textbf\{\}$ & \textbf{text} \\
+            \hline
+            Выделить курсивом & $\backslash textit\{\}$ & \textit{text} \\
+            \hline
+            Подчеркнуть & $\backslash underline\{\}$ & \underline{text} \\
+            \hline
+            Взять в рамочку & $\backslash fbox\{\}$ & \fbox{text} \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    Закончить раздел работы с текстом, мне бы хотелось кратким описанием разделов документа.
+    \LaTeX предлогает удобную иерархию создания разделов, подразделов, подпод разделов и так далее.
+    
+    Для того, чтобы создать в документе новый раздел необходимо воспользоваться
+    командой $\backslash section\{\}$, подраздел $\backslash subsection\{\}$,
+    ну а подподраздел $\backslash section\{\}$. В фигурных скобочках пишется названия раздела,
+    причем, \LaTeX автоматически нумерует его. При этом, если вы хотите создать ненумерованный
+    раздел или подраздел, необходимо поставить символ * после слова section.
+
+    \begin{center}
+        \begin{verbatim}
+            \section*{SctionName}
+        \end{verbatim}
+    \end{center}
+
     \section{Математика}
 
     Теперь, когда вы умеете работать с текстом вам нужно понять, как в \LaTeX{} записываются и оформляются математический выражения. Для выделения формул в \LaTeX{} используются две конструкции. Если получившиеся выражение вам важно и вы хотите его отметить (чтобы использовать в дальнейшем или по другой причине), то вам нужно использовать такую запись:
-    
+
     \begin{equation}
         y = f(x)
     \end{equation}
@@ -372,13 +539,13 @@
     
     Ссылки на страницы редко когда используются, поэтому здесь будут рассмотрено подключение ссылок к изображениям и формулам. Посмотрим на данное изображение:
 
-\newpage    
+    \newpage    
     
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.48\linewidth]{1.png}
-        \label{picture}
         \caption{Схема устройства Фурье-интерферометра}
+        \label{picture_1}
     \end{figure}
     
     И его код:
@@ -387,12 +554,20 @@
         \begin{figure}[h!]
             \centering
             \includegraphics[width=0.48\linewidth]{1.png}
-            \label{picture_1}
             \caption{Схема устройства Фурье-интерферометра}
+            \label{picture_1}
         \end{figure}
     \end{verbatim}
     
-    В коде появилось новое, незнакомое нам выражение - $\backslash label\{picture_1\}$. $\backslash label\{\}$ задает метку, с именем прописанным внутри фигурных скобок. На это имя теперь можно ссылаться, например так: $\hyperref[picture]{1}$. Чтобы это сделать, нужно просто написать такой код:
+    В коде появилось новое, незнакомое нам выражение: 
+
+    \begin{verbatim}
+        \label{picture_1}    
+    \end{verbatim}
+
+    $\backslash label\{\}$ задает метку, 
+    с именем прописанным внутри фигурных скобок. На это имя теперь можно ссылаться, например так: 
+    \hyperref[picture_1]{1}. Чтобы это сделать, нужно просто написать такой код:
     
     \begin{verbatim}
         \hyperref[picture_1]{1}
@@ -408,7 +583,7 @@
     
     Код к $\eqref{formula}$:
     
-    \newpage
+    % \newpage
     
     \begin{verbatim}
         \begin{equation} \label{formula_1}
